@@ -28,7 +28,7 @@ Site web moderne et responsive pour le club de tennis de table de Chalon.
 test-chalon-tt/
 ├── index.html
 └── assets/
-    ```
+    └── logo_chalon_tt.jpg
 ```
 
 ## Horaires d'Entraînement

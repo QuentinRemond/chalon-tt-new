@@ -15,7 +15,8 @@
         :root {
             --primary-blue: #0056B3;
             --light-blue: #007BFF;
-            --white: #FFFFFF;
+            --white: #fff;
+            --gray: #f8f9fa;
             --light-gray: #F4F4F4;
         }
 
@@ -86,6 +87,92 @@
             color: var(--white);
             padding: 40px 0;
         }
+
+        .bg-gray {
+            background-color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 30px;
+            }
+            
+            .navbar-collapse {
+                background-color: var(--primary-blue);
+                padding: 1rem;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .nav-link {
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-item:last-child .nav-link {
+                border-bottom: none;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .map-container {
+                margin-top: 1rem;
+                padding: 0 15px;
+            }
+
+            .map-container iframe {
+                height: 300px;
+                border-radius: 10px;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+            .footer {
+                text-align: center;
+                padding: 30px 0;
+            }
+
+            .footer .text-end {
+                text-align: center !important;
+                margin-top: 1.5rem;
+            }
+        }
+
+        /* Mobile menu improvements */
+        @media (max-width: 768px) {
+            .navbar {
+                background: linear-gradient(to right, #0056B3, #007BFF);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            
+            .nav-link {
+                color: #fff;
+                font-size: 1.2rem;
+                padding: 1rem;
+                transition: background-color 0.3s;
+            }
+            
+            .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+            .navbar-toggler {
+                border-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            }
+        }
     </style>
 </head>
 <body>
@@ -93,7 +180,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDun0pwX0842fQ89cAiSsvq_Ud7lEYotJY2A&s" alt="Chalon TT Logo" style="height: 40px; margin-right: 10px;">
+                <img src="https://th.bing.com/th/id/OIP.gFoT-GCXzZjuNaKUMGLFlQHaHa?rs=1&pid=ImgDetMain" alt="Chalon TT Logo" style="height: 40px; margin-right: 10px;">
                 Chalon TT
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -140,7 +227,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Notre Histoire</h3>
-                    <p>Le Chalon Tennis de Table est un club historique de la région, engagé dans la formation et le développement du tennis de table pour tous les niveaux.</p>
+                    <p>Le Chalon Tennis de Table a été fondé le 10 juillet 1998. Le club se distingue par son ambiance conviviale et dynamique, attirant des passionnés de tous âges, offrant ainsi des opportunités pour les membres de se perfectionner et de participer à des compétitions.</p>
                 </div>
                 <div class="col-md-6">
                     <h3>Horaires d'entraînement</h3>
@@ -197,8 +284,7 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <p class="lead">Venez supporter nos équipes lors des matchs à domicile !</p>
-                <a href="#contact" class="btn btn-primary">Nous rejoindre</a>
+                <a href="https://monclub.fftt.com/contests/team/consult" class="btn btn-primary">Voir les résultats</a>
             </div>
         </div>
     </section>
@@ -240,38 +326,39 @@
     <section id="contact" class="section bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Contact</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Nous contacter</h3>
-                    <form id="contact-form">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="name" required>
+            <div class="row g-4">
+                <div class="col-md-6 contact-info">
+                    <div class="bg-white p-4 rounded shadow-sm h-100">
+                        <h4 class="mb-4">Nous trouver</h4>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>4 route de Demigny<br>71530 CHAMPFORGEUIL</p>
+                        <p><i class="fas fa-envelope me-2"></i>chalontt@hotmail.com</p>
+                        <p><i class="fas fa-clock me-2"></i>Horaires d'entraînement :</p>
+                        <ul class="list-unstyled ms-4 mb-4">
+                            <li>Mardi : 17h-20h</li>
+                            <li>Jeudi : 17h-20h</li>
+                            <li>Vendredi : 17h-20h</li>
+                        </ul>
+                        <div class="map-container mt-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.485774716298!2d4.833690776891793!3d46.82282694327387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f2fc0b619df81d%3A0x8b0a3d86d1f9b9a9!2s4%20Rte%20de%20Demigny%2C%2071530%20Champforgeuil!5e0!3m2!1sfr!2sfr!4v1710864547704!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
-                    </form>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <h3>Nous trouver</h3>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>4 route de Demigny, 71530 CHAMPFORGEUIL</p>
-                    <p><i class="fas fa-envelope me-2"></i>chalontt@hotmail.com</p>
-                    <div id="map" style="height: 300px; width: 100%; margin-top: 20px;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2730.645912824414!2d4.8425942766647285!3d46.81128044255852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f2fb6f965916ad%3A0xafa3704fc15dc4f2!2sCOSEC%20NORD!5e0!3m2!1sfr!2sfr!4v1742321970674!5m2!1sfr!2sfr" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="contact-form bg-white p-4 rounded shadow-sm h-100">
+                        <h4 class="mb-4">Envoyez-nous un message</h4>
+                        <form action="https://formspree.io/f/mnnpjdjd" method="POST">
+                            <input type="hidden" name="_replyto" value="qremond71@gmail.com">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="name" placeholder="Nom" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" name="message" placeholder="Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </form>
                     </div>
                 </div>
             </div>
