@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chalon-tt-new.onrender.com/sitemap.xml
